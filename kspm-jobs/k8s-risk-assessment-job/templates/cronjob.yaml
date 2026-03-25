@@ -36,7 +36,7 @@ spec:
                 - --output
                 - /data/report.json
                 - --cluster-name=$(CLUSTER_NAME)
-                {{- if .Values.controlsConfig.enabled }}
+                {{- if .Values.global.controlsConfig.enabled }}
                 - --controls-config
                 - /data/controls-config/controls-config.json
                 {{- end }}
@@ -50,7 +50,7 @@ spec:
               volumeMounts:
                 - name: datapath
                   mountPath: /data
-                {{- if .Values.controlsConfig.enabled }}
+                {{- if .Values.global.controlsConfig.enabled }}
                 - name: controls-config
                   mountPath: /data/controls-config
                   subPath: controls-config.json
@@ -93,7 +93,7 @@ spec:
             - name: config
               configMap:
                 name: risk-assessment-config-{{ .Release.Name }}
-            {{- if .Values.controlsConfig.enabled }}
+            {{- if .Values.global.controlsConfig.enabled }}
             - name: controls-config
               configMap:
                 name: controls-config-{{ .Release.Name }}

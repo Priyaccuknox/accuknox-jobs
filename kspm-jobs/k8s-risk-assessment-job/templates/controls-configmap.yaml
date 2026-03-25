@@ -1,4 +1,4 @@
-{{- if .Values.controlsConfig.enabled }}
+{{- if .Values.global.controlsConfig.enabled }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -6,5 +6,5 @@ metadata:
   namespace: {{ .Release.Namespace }}
 data:
   controls-config.json: |
-{{ .Files.Get "templates/default_config_inputs.json" | indent 4 }}
+{{ .Files.Get "config/default_config_inputs.json" | nindent 4 }}
 {{- end }}
