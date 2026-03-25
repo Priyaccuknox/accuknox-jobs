@@ -1,4 +1,3 @@
-
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -10,11 +9,12 @@ spec:
   template:
     metadata:
       labels:
-        app: k8s-risk-assessment-job-{{ now | unixEpoch }}
+        job-name: k8s-risk-assessment-job-{{ now | unixEpoch }}
+        app: scanner
     spec:
-    {{- if .Values.registry.secretName }}
+    {{- if .Values.global.registry.secretName }}
       imagePullSecrets:
-      - name: {{ .Values.registry.secretName }}
+      - name: {{ .Values.global.registry.secretName }}-k8s
     {{- end }}     
       initContainers:
         - name: job-init-container
