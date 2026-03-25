@@ -14,6 +14,9 @@ kubescape:
   tag: "v3.0.8"
   image: ""
 
+# This will use the default_config_inputs.json present in the config folder.
+controlsConfig:
+  enabled: false
 
 replicaCount: 1
 
