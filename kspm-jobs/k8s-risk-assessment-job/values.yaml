@@ -14,10 +14,6 @@ kubescape:
   tag: "v3.0.8"
   image: ""
 
-# This will use the default_config_inputs.json present in the config folder.
-controlsConfig:
-  enabled: false
-
 replicaCount: 1
 
 global:
@@ -47,6 +43,10 @@ global:
     username: ""
     password: ""
     preserveUpstream: true
+
+  # This will use the default_config_inputs.json present in the config folder.
+  controlsConfig:
+    enabled: false
 
 authTokenPath: "/secrets/tokens/AUTH_TOKEN"
 joinTokenPath: "/secrets/tokens/JOIN_TOKEN"

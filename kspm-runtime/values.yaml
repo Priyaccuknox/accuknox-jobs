@@ -22,6 +22,10 @@ global:
       check: ""
       skip: ""
 
+  # This will use the default_config_inputs.json present in the config folder.
+  controlsConfig:
+    enabled: false
+
   spire:
     secretName: "spire-agent-secret"
 
