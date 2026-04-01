@@ -1,0 +1,40 @@
+{
+  "controls": [
+    {
+      "controlID": "C-0012",
+      "rules": [
+        {
+          "controlConfigurations": {
+            "sensitiveKeyNames": [
+              "aws_secret_access_key",
+              "azure_batchai_storage_key",
+              "azure_batch_key",
+              "secret",
+              "key",
+              "password",
+              "pwd",
+              "token",
+              "jwt",
+              "bearer",
+              "credential"
+            ],
+            "sensitiveValues": [
+              "BEGIN \\w+ PRIVATE KEY",
+              "PRIVATE KEY",
+              "eyJhbGciO",
+              "JWT",
+              "Bearer",
+              "_key_",
+              "_secret_"
+            ],
+            "sensitiveKeyNamesAllowed": [
+              "key",
+              "token"
+            ],
+            "sensitiveValuesAllowed": []
+          }
+        }
+      ]
+    }
+  ]
+}
